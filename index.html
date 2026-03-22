@@ -305,10 +305,12 @@
     }
   });
 
-  bgColorInput.addEventListener('input', (e) => {
+  function onColorChange(e) {
     bgColor = e.target.value;
     applyBackground();
-  });
+  }
+  bgColorInput.addEventListener('input', onColorChange);
+  bgColorInput.addEventListener('change', onColorChange);
 
   gridBtns.forEach(btn => {
     btn.addEventListener('click', () => {
